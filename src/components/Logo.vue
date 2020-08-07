@@ -1,10 +1,7 @@
 <template>
-  <svg :width="getWidth" :height="getHeight" x="0.0" y="0.0" viewBox="0 0 48 48">
-    <path
-      fill="currentColor"
-      fill-rule="nonzero"
-      d="M24 .21L.21 24 24 47.79 47.79 24 24 .21zM5.82 24L24 5.82l7.69 7.69-2.8 2.8L24 11.43 11.43 24l4.88 4.89-2.8 2.8L5.82 24zm25.15 0L24 30.97 17.03 24 24 17.03 30.97 24zM16.31 34.49l2.8-2.8L24 36.57 36.57 24l-4.89-4.89 2.8-2.8 7.7 7.69L24 42.18l-7.69-7.69z"
-    />
+  <svg :width="getWidth" :height="getHeight" x="0.0" y="0.0" viewBox="0 0 121 78">
+    <path fill="currentColor" fill-rule="nonzero" d="M90.5 3C90.5 1.34315 91.8431 0 93.5 0H117.5C119.157 0 120.5 1.34315 120.5 3V44.5C120.5 46.1569 119.157 47.5 117.5 47.5H93.5C91.8431 47.5 90.5 46.1569 90.5 44.5V3Z"/>
+    <path fill="currentColor" fill-rule="nonzero" d="M54.878 22.7407C56.7676 20.8498 60 22.1881 60 24.8613V74.5385C60 76.1953 58.6569 77.5385 57 77.5385H3C1.34315 77.5385 0 76.1953 0 74.5385V24.7844C0 22.1112 3.23238 20.7729 5.122 22.6637L27.9164 45.4728C29.0882 46.6453 30.9887 46.6453 32.1604 45.4728L54.878 22.7407Z"/>
   </svg>
 </template>
 
@@ -23,7 +20,7 @@ export default {
     },
 
     getHeight() {
-      return Math.ceil((this.getWidth / 48) * 48);
+      return Math.ceil((this.getWidth / 64) * 64);
     }
   }
 };

@@ -1,5 +1,91 @@
 <template>
-  <div class="font-sans antialiased text-ui-typo bg-ui-background">
+  <div class="font-sans antialiased text-ui-typo bg-ui-background ">
+    <div
+      class="pt-8 md:pt-16 container"
+      style="height:calc(100vh - 62px)"
+    >
+      <div class="flex flex-col items-center ">
+        <div class="flex flex-col items-center mb-2 text-ui-primary">
+          <Logo :width="160" />
+          <h1 class="text-4xl text-center lg:text-5xl">
+            Maarten Lauwaert
+          </h1>
+        </div>
+
+        <!-- <p class="text-xl font-medium text-center">
+          Perfect Lighthouse score out of the box. Easy to set-up. Dark mode included.
+          <br>
+          <strong class="text-ui-primary">Got a minute?</strong>
+        </p> -->
+
+        <!-- <div class="py-4">
+            <code class="block px-4 py-1 select-all bg-ui-border text-ui-typo">gridsome create your-project https://github.com/mrcrmn/docc</code>
+          </div> -->
+
+        <div class="flex justify-center mt-8">
+          <g-link
+            to="/docs/"
+            class="flex items-center px-6 py-4 ml-auto text-2xl font-bold leading-none text-white border rounded-lg shadow-lg bg-ui-primary border-ui-primary transition-all duration-200 ease-out transform hover:shadow-xl hover:-translate-y-1"
+          >
+            Get in contact
+            <ArrowRightCircleIcon
+              class="ml-4"
+              size="1x"
+            />
+          </g-link>
+        </div>
+
+        <p class="mt-8 text-center">
+          UX Researcher & prototyper
+        </p>
+
+      </div>
+
+      <div class="pt-8 mx-auto mt-8 border-t md:mt-16 md:pt-16 border-top border-ui-border max-w-screen-sm"></div>
+
+      <div class="flex flex-wrap justify-center ">
+        <div class="flex flex-col items-center w-full px-4 mb-8 text-center md:w-1/3">
+          <ZapIcon
+            size="3x"
+            class="mb-6 text-ui-primary"
+          />
+          <h3 class="font-bold tracking-wide uppercase text-ui-primary">
+            Incredibly Fast
+          </h3>
+          <p class="text-lg text-left">
+            Powered by Gridsome. Built on Vue. Outputs static files. It wont't get any faster than this. <span class="border-b border-dashed border-ui-primary text-ui-primary">No seriously</span>.
+          </p>
+        </div>
+
+        <div class="flex flex-col items-center w-full px-4 mb-8 text-center md:w-1/3">
+          <SearchIcon
+            size="3x"
+            class="mb-6 text-ui-primary"
+          />
+          <h3 class="font-bold tracking-wide uppercase text-ui-primary">
+            Instant Search
+          </h3>
+          <p class="text-lg text-left">
+            All headlines are indexed. Instant search powered by Fuse.js. Find what you are looking for in the <span class="border-b border-dashed border-ui-primary text-ui-primary">blink of an eye</span>.
+          </p>
+        </div>
+
+        <div class="flex flex-col items-center w-full px-4 mb-8 text-center md:w-1/3">
+          <MoonIcon
+            size="3x"
+            class="mb-6 text-ui-primary"
+          />
+          <h3 class="font-bold tracking-wide uppercase text-ui-primary">
+            Lights out
+          </h3>
+          <p class="text-lg text-left">
+            Working late at night again? Enable dark mode with the click of a button.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
     <div class="flex flex-col justify-start min-h-screen">
 
       <header
@@ -34,8 +120,14 @@
 
     </div>
 
-    <div v-if="hasSidebar" class="fixed bottom-0 right-0 z-50 p-8 lg:hidden">
-      <button class="p-3 text-white rounded-full shadow-lg bg-ui-primary hover:text-white" @click="sidebarOpen = ! sidebarOpen">
+    <div
+      v-if="hasSidebar"
+      class="fixed bottom-0 right-0 z-50 p-8 lg:hidden"
+    >
+      <button
+        class="p-3 text-white rounded-full shadow-lg bg-ui-primary hover:text-white"
+        @click="sidebarOpen = ! sidebarOpen"
+      >
         <XIcon v-if="sidebarOpen" />
         <MenuIcon v-else />
       </button>
@@ -126,19 +218,19 @@ export default {
 
 <style lang="scss">
 :root {
-  --color-ui-background: theme('colors.white');
-  --color-ui-typo: theme('colors.gray.700');
-  --color-ui-sidebar: theme('colors.gray.200');
-  --color-ui-border: theme('colors.gray.300');
-  --color-ui-primary: theme('colors.indigo.600');
+  --color-ui-background: theme("colors.white");
+  --color-ui-typo: theme("colors.gray.700");
+  --color-ui-sidebar: theme("colors.gray.200");
+  --color-ui-border: theme("colors.gray.300");
+  --color-ui-primary: theme("colors.indigo.600");
 }
 
 html[lights-out] {
-  --color-ui-background: theme('colors.gray.900');
-  --color-ui-typo: theme('colors.gray.100');
-  --color-ui-sidebar: theme('colors.gray.800');
-  --color-ui-border: theme('colors.gray.800');
-  --color-ui-primary: theme('colors.indigo.500');
+  --color-ui-background: theme("colors.gray.900");
+  --color-ui-typo: theme("colors.gray.100");
+  --color-ui-sidebar: theme("colors.gray.800");
+  --color-ui-border: theme("colors.gray.800");
+  --color-ui-primary: theme("colors.indigo.500");
 
   pre[class*="language-"],
   code[class*="language-"] {
@@ -190,7 +282,9 @@ h4 {
   @apply text-lg;
 }
 
-a:not(.active):not(.text-ui-primary):not(.text-white) { @apply text-ui-typo }
+a:not(.active):not(.text-ui-primary):not(.text-white) {
+  @apply text-ui-typo;
+}
 
 p,
 ol,
@@ -206,10 +300,15 @@ blockquote {
     @apply text-ui-primary underline;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply -mt-12 pt-20;
   }
-    
+
   h2 + h3,
   h2 + h2,
   h3 + h3 {
@@ -283,7 +382,8 @@ header {
 table {
   @apply text-left mb-6;
 
-  td, th {
+  td,
+  th {
     @apply py-3 px-4;
     &:first-child {
       @apply pl-0;
