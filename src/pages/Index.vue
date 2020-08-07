@@ -33,6 +33,7 @@
           UX Researcher & prototyper  
         </p>
 
+        <socials></socials>
       </div>
 
       <div class="pt-8 mx-auto mt-8 border-t md:mt-16 md:pt-16 border-top border-ui-border max-w-screen-sm"></div>
@@ -80,6 +81,7 @@ import { ArrowRightCircleIcon, ZapIcon, CodeIcon, MoonIcon, SearchIcon } from 'v
 export default {
   components: {
     Logo,
+    Socials,
     ArrowRightCircleIcon,
     ZapIcon,
     CodeIcon,

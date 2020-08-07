@@ -96,4 +96,20 @@ export default {
 
 <style>
 @import 'prism-themes/themes/prism-material-oceanic.css';
+
+/* .content p {
+  display: inline;
+  background-repeat: no-repeat;
+  transition: all 500ms ease-in-out;
+  background-position: left;
+  background-size: 0% 100%;
+  background-image: linear-gradient(to right, var(--color-ui-border), var(--color-ui-border));
+  padding-bottom: 4px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.content p:hover {
+   background-size: 100% 100%;
+} */
 </style>

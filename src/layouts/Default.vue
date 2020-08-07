@@ -1,90 +1,6 @@
 <template>
-  <div class="font-sans antialiased text-ui-typo bg-ui-background ">
-    <div
-      class="pt-8 md:pt-16 container"
-      style="height:calc(100vh - 62px)"
-    >
-      <div class="flex flex-col items-center ">
-        <div class="flex flex-col items-center mb-2 text-ui-primary">
-          <Logo :width="160" />
-          <h1 class="text-4xl text-center lg:text-5xl">
-            Maarten Lauwaert
-          </h1>
-        </div>
-
-        <!-- <p class="text-xl font-medium text-center">
-          Perfect Lighthouse score out of the box. Easy to set-up. Dark mode included.
-          <br>
-          <strong class="text-ui-primary">Got a minute?</strong>
-        </p> -->
-
-        <!-- <div class="py-4">
-            <code class="block px-4 py-1 select-all bg-ui-border text-ui-typo">gridsome create your-project https://github.com/mrcrmn/docc</code>
-          </div> -->
-
-        <div class="flex justify-center mt-8">
-          <g-link
-            to="/docs/"
-            class="flex items-center px-6 py-4 ml-auto text-2xl font-bold leading-none text-white border rounded-lg shadow-lg bg-ui-primary border-ui-primary transition-all duration-200 ease-out transform hover:shadow-xl hover:-translate-y-1"
-          >
-            Get in contact
-            <ArrowRightCircleIcon
-              class="ml-4"
-              size="1x"
-            />
-          </g-link>
-        </div>
-
-        <p class="mt-8 text-center">
-          UX Researcher & prototyper
-        </p>
-
-      </div>
-
-      <div class="pt-8 mx-auto mt-8 border-t md:mt-16 md:pt-16 border-top border-ui-border max-w-screen-sm"></div>
-
-      <div class="flex flex-wrap justify-center ">
-        <div class="flex flex-col items-center w-full px-4 mb-8 text-center md:w-1/3">
-          <ZapIcon
-            size="3x"
-            class="mb-6 text-ui-primary"
-          />
-          <h3 class="font-bold tracking-wide uppercase text-ui-primary">
-            Incredibly Fast
-          </h3>
-          <p class="text-lg text-left">
-            Powered by Gridsome. Built on Vue. Outputs static files. It wont't get any faster than this. <span class="border-b border-dashed border-ui-primary text-ui-primary">No seriously</span>.
-          </p>
-        </div>
-
-        <div class="flex flex-col items-center w-full px-4 mb-8 text-center md:w-1/3">
-          <SearchIcon
-            size="3x"
-            class="mb-6 text-ui-primary"
-          />
-          <h3 class="font-bold tracking-wide uppercase text-ui-primary">
-            Instant Search
-          </h3>
-          <p class="text-lg text-left">
-            All headlines are indexed. Instant search powered by Fuse.js. Find what you are looking for in the <span class="border-b border-dashed border-ui-primary text-ui-primary">blink of an eye</span>.
-          </p>
-        </div>
-
-        <div class="flex flex-col items-center w-full px-4 mb-8 text-center md:w-1/3">
-          <MoonIcon
-            size="3x"
-            class="mb-6 text-ui-primary"
-          />
-          <h3 class="font-bold tracking-wide uppercase text-ui-primary">
-            Lights out
-          </h3>
-          <p class="text-lg text-left">
-            Working late at night again? Enable dark mode with the click of a button.
-          </p>
-        </div>
-      </div>
-
-    </div>
+  <div class="font-sans antialiased text-ui-typo bg-ui-background">
+    <profile></profile>
 
     <div class="flex flex-col justify-start min-h-screen">
 
@@ -144,12 +60,14 @@ query {
 </static-query>
 
 <script>
+import Profile from "@/components/Profile";
 import Sidebar from "@/components/Sidebar";
 import LayoutHeader from "@/components/LayoutHeader";
 import { MenuIcon, XIcon } from 'vue-feather-icons';
 
 export default {
   components: {
+    Profile,
     Sidebar,
     LayoutHeader,
     MenuIcon,
@@ -203,11 +121,13 @@ export default {
         {
           key: 'og:image',
           name: 'og:image',
+          // TODO
           content: process.env.SITE_URL + '/logo.jpg',
         },
         {
           key: 'twitter:image',
           name: 'twitter:image',
+          // TODO
           content: process.env.SITE_URL + '/logo.jpg',
         },
       ]
@@ -219,18 +139,18 @@ export default {
 <style lang="scss">
 :root {
   --color-ui-background: theme("colors.white");
-  --color-ui-typo: theme("colors.gray.700");
+  --color-ui-typo: black;
   --color-ui-sidebar: theme("colors.gray.200");
   --color-ui-border: theme("colors.gray.300");
-  --color-ui-primary: theme("colors.indigo.600");
+  --color-ui-primary: #FFB900;
 }
 
 html[lights-out] {
   --color-ui-background: theme("colors.gray.900");
   --color-ui-typo: theme("colors.gray.100");
-  --color-ui-sidebar: theme("colors.gray.800");
+  --color-ui-sidebar: theme("colors.gray.800"); 
   --color-ui-border: theme("colors.gray.800");
-  --color-ui-primary: theme("colors.indigo.500");
+  --color-ui-primary: #FFB900;
 
   pre[class*="language-"],
   code[class*="language-"] {
@@ -264,6 +184,7 @@ h4 {
       @apply text-ui-primary absolute opacity-0 float-left;
     }
   }
+  
 }
 
 h1 {
@@ -298,6 +219,19 @@ blockquote {
 .content {
   a {
     @apply text-ui-primary underline;
+        display: inline;
+    
+    background-repeat: no-repeat;
+    transition: all 500ms ease-in-out;
+    background-position: left;
+    background-size: 0% 100%;
+    background-image: linear-gradient(to right, var(--color-ui-border), var(--color-ui-border));
+    padding-bottom: 4px;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+    &:hover {
+    background-size: 100% 100%;
+    }
   }
 
   h1,
