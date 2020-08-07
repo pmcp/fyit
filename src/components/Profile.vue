@@ -11,7 +11,14 @@
         Brussels based UX Researcher & Prototyping Expert
       </p>
       <Socials></Socials>
+      <section class=" py-12 px-4 sm:px-6 lg:py-16 lg:px-8 ml-animation">
+        <div class="flex flex-col items-center mb-2 text-ui-primary">      
+          <h2 class="text-center text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl sm:leading-10 ml-animation__underline">
+            Clients
+          </h2>
+        </div>
       <Companies></Companies>
+      </section>
     </div>
 
   </div>

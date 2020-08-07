@@ -81,7 +81,6 @@ import { ArrowRightCircleIcon, ZapIcon, CodeIcon, MoonIcon, SearchIcon } from 'v
 export default {
   components: {
     Logo,
-    Socials,
     ArrowRightCircleIcon,
     ZapIcon,
     CodeIcon,

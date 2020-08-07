@@ -169,7 +169,6 @@ h2,
 h3,
 h4 {
   @apply leading-snug font-black mb-4 text-ui-typo;
-
   &:hover {
     a::before {
       @apply opacity-100;
@@ -348,4 +347,28 @@ table {
     transform: translateX(0);
   }
 }
+
+
+// ML
+.ml-animation {
+  &__underline {
+  background-repeat: no-repeat;
+  transition: all 500ms ease-in-out;
+  background-position: bottom left;
+  background-size: 0% 5px;
+  background-image: linear-gradient(var(--color-ui-primary), var(--color-ui-primary));
+  padding-bottom: 5px;
+  
+ }
+  &:hover {
+    .ml-animation__underline {
+      
+    background-size: 100% 5px;
+  
+    }
+
+  }
+}
+ 
 </style>
+
